@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "stories",
   "info": {
-    "name": "stories"
+    "name": "stories",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,22 +13,34 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "body": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": false
     },
     "time": {
       "type": "time"
     },
-    "details": {
-      "type": "richtext"
+    "notes": {
+      "type": "text"
     },
     "public": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
+    },
+    "categories": {
+      "collection": "categories",
+      "via": "stories",
+      "dominant": true
+    },
+    "Preamble": {
+      "type": "text"
     }
   }
 }
