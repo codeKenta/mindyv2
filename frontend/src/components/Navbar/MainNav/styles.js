@@ -3,72 +3,104 @@ const breakpoint = 700;
 const isActive = false;
 
 const getStyles = (theme) => {
-  const { space } = theme;
+  const { space, palette } = theme;
 
   return {
     root: {
       width: "100%",
       top: "0",
       zIndex: 10000,
-      backgroundColor: theme.palette.primary.almostBlack,
-      padding: `0 ${space.xs}`,
+      backgroundColor: palette.primary.almostWhite,
+      borderBottom: "1px solid grey",
+
+      padding: `${space.xs} ${space.s}`,
       "@media screen and (max-width: 699px)": {
         position: isActive ? "fixed" : "absolute",
-        // backgroundColor: isActive ? theme.palette.primary.almostBlack : "unset",
         height: isActive ? "100vh" : "auto",
       },
       "@media screen and (min-width: 700px)": {
         position: "absolute",
       },
     },
+    logo: {
+      fontFamily: "'Montserrat', sans-serif",
+      fontWeight: "bold",
+      fontSize: 25,
+      cursor: "pointer",
+    },
     nav: {
       width: "100%",
       margin: "0 auto",
       display: "flex",
-      backgroundColor: "red",
       "@media screen and (max-width: 699px)": {
         flexDirection: "column",
         height: "100%",
       },
       "@media screen and (min-width: 700px)": {
+        alignItems: "center",
         maxWidth: "1900px",
         justifyContent: "space-between",
         height: "auto",
         flexDirection: "row",
       },
     },
-    a: {
-      display: "block",
-      textDecoration: "none",
-      color: "secondaryContrast",
-      fontWeight: "500",
-      cursor: "pointer",
-      transition: "color 500ms ease",
-      ":hover": {
-        color: "text",
-      },
-      "@media screen and (max-width: 699px)": {
-        marginBottom: "20px",
-      },
-      "@media screen and (min-width: 700px)": {
-        marginLeft: "25px",
-      },
+
+    navGroupsWrapper: {
+      display: "flex",
+      flexDirection: "row",
     },
-    listWrapper: {
+
+    primaryMenu: {
       listStyle: "none",
-      "@media screen and (max-width: 699px)": {
-        display: isActive ? "flex" : "none",
-        flexDirection: "column",
-        fontSize: "25px",
-        marginTop: "100px",
-      },
-      "@media screen and (min-width: 700px)": {
-        fontSize: 3,
-        display: "flex",
-        justifyContent: "flex-end",
-        flexDirection: "row",
-      },
+      display: "flex",
+      padding: `${space.xxs} 0`,
+      margin: 0,
+      fontSize: "1.2rem",
+      borderRight: `1px solid ${palette.primary.mediumGrey}`,
+      marginRight: space.m,
     },
+
+    primaryMenuItem: {
+      fontFamily: "'Montserrat', sans-serif",
+      textTransform: "uppercase",
+      color: palette.primary.darkGrey,
+      margin: 0,
+      marginRight: space.m,
+      // textDecoration: "none",
+    },
+
+    // a: {
+    //   display: "block",
+    //   textDecoration: "none",
+    //   color: "secondaryContrast",
+    //   fontWeight: "500",
+    //   cursor: "pointer",
+    //   transition: "color 500ms ease",
+    //   ":hover": {
+    //     color: "text",
+    //   },
+    //   "@media screen and (max-width: 699px)": {
+    //     marginBottom: "20px",
+    //   },
+    //   "@media screen and (min-width: 700px)": {
+    //     marginLeft: "25px",
+    //   },
+    // },
+    // listWrapper: {
+    //   listStyle: "none",
+    //   "@media screen and (max-width: 699px)": {
+    //     display: isActive ? "flex" : "none",
+    //     flexDirection: "column",
+    //     fontSize: "25px",
+    //     marginTop: "100px",
+    //   },
+    //   "@media screen and (min-width: 700px)": {
+    //     fontSize: 3,
+    //     display: "flex",
+    //     justifyContent: "flex-end",
+    //     flexDirection: "row",
+    //   },
+    // },
     hamburger: {
       display: "flex",
       width: "40px",

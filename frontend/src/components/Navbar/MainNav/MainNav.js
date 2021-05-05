@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import getStyles from "./styles";
-
+import Button from "@components/Elements/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import { buttonTypes } from "@types";
+
 import Hamburger from "../Hamburger";
 
 const useStyles = makeStyles((theme) => getStyles(theme));
 
 // import Logo from "@components/Logo";
 
-const nonAuthorizedMenu = [{ label: "stories", path: "/stories" }];
+const nonAuthorizedMenu = [
+  { label: "stories", path: "/stories" },
+  { label: "other link", path: "/stories" },
+];
 
 const MainNav = () => {
   const [isActive, setIsActive] = useState(false);
@@ -31,19 +36,24 @@ const MainNav = () => {
     <div className={classes.root}>
       <nav className={classes.nav}>
         <Link href="/">
-          <div>
-            <span>ZENOTE</span>
-          </div>
+          <span className={classes.logo}>ZENOTE</span>
         </Link>
 
-        <ul>
-          {nonAuthorizedMenu.map(({ label, path }) => (
-            <li key={label}>
-              <Link href={path}>{label}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className={classes.navGroupsWrapper}>
+          <ul className={classes.primaryMenu}>
+            {nonAuthorizedMenu.map(({ label, path }) => (
+              <li key={label}>
+                <Link href={path}>
+                  <span className={classes.primaryMenuItem}>{label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Button type={buttonTypes.secondary}>Sign up</Button>
+          <Button type={buttonTypes.primary}>Log in</Button>
+        </div>
       </nav>
+
       {/* <Hamburger
         isActive={isActive}
         handleClick={(e) => setIsActive(!isActive)}
