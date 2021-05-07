@@ -25,9 +25,6 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,
-  data: PropTypes.object,
-  location: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
 };
 
 Layout.defaultProps = {

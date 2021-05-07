@@ -5,60 +5,52 @@ import PropTypes from "prop-types";
 import { buttonTypes } from "@types";
 
 const useStyles = makeStyles((theme) => {
-  const { palette } = theme;
+  const { palette, radius, fonts, space } = theme;
 
   return {
     root: {
-      //   background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-      borderRadius: 3,
+      fontFamily: fonts.label,
       border: 0,
-      color: "white",
-      height: 48,
-      padding: "0 30px",
-      boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+      padding: `5px ${space.m}`,
+      borderRadius: radius.s,
+      textTransform: "none",
     },
 
     [buttonTypes.primary]: {
-      background: theme.palette.primary.main,
+      background: palette.primary.main,
+      color: palette.primary.almostWhite,
     },
     [buttonTypes.secondary]: {
-      background: "red",
+      background: "none",
+      color: palette.primary.main,
+      border: `1px solid ${palette.primary.main}`,
     },
   };
 });
 
-export default function ClassesNesting({
-  children,
-  clickHandler,
-  disabled,
-  type,
-}) {
+const StyledButton = ({ children, clickHandler, disabled, type }) => {
   const classes = useStyles();
-
-  console.log(type);
 
   return (
     <Button
       onClick={clickHandler}
       disabled={disabled}
-      classes={{
-        root: classes.root, // class name, e.g. `classes-nesting-root-x`
-        [type]: classes[type],
-        // label: classes.label, // class name, e.g. `classes-nesting-label-x`
-      }}
+      classes={{ root: classes.root }}
+      className={classes[type]}
     >
       {children}
     </Button>
   );
-}
+};
 
-Button.propTypes = {
+StyledButton.propTypes = {
   children: PropTypes.node.isRequired,
   clickHandler: PropTypes.func,
   disabled: PropTypes.bool,
   type: PropTypes.string,
 };
 
+export default StyledButton;
 /*
 import React from 'react'
 import styled from '@emotion/styled'

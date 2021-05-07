@@ -12,7 +12,6 @@ const getStyles = (theme) => {
       zIndex: 10000,
       backgroundColor: palette.primary.almostWhite,
       borderBottom: "1px solid grey",
-
       padding: `${space.xs} ${space.s}`,
       "@media screen and (max-width: 699px)": {
         position: isActive ? "fixed" : "absolute",
@@ -55,7 +54,7 @@ const getStyles = (theme) => {
       display: "flex",
       padding: `${space.xxs} 0`,
       margin: 0,
-      fontSize: "1.2rem",
+      // fontSize: "1.2rem",
       borderRight: `1px solid ${palette.primary.mediumGrey}`,
       marginRight: space.m,
     },
@@ -67,6 +66,14 @@ const getStyles = (theme) => {
       margin: 0,
       marginRight: space.m,
       // textDecoration: "none",
+    },
+
+    buttonsWrapper: {
+      display: "flex",
+      alignItems: "center",
+      "& div:first-of-type": {
+        marginRight: space.m,
+      },
     },
 
     // a: {

@@ -1,10 +1,11 @@
+import { StepLabel } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 // Create a theme instance.
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#556cd6",
+      main: "#3E43D3",
       almostBlack: "#31333C",
       darkGrey: "#636363",
       mediumGrey: "#C4C4C4",
@@ -14,7 +15,6 @@ const theme = createMuiTheme({
       primary: "#5355BD",
       secondary: "#E06C00",
     },
-
     error: {
       main: "#FF6C8D",
     },
@@ -30,10 +30,23 @@ const theme = createMuiTheme({
     l: "40px",
     xl: "50px",
   },
+  radius: {
+    xxs: "10px",
+    xs: "15px",
+    s: "20px",
+    m: "30px",
+    l: "40px",
+    xl: "50px",
+  },
   spacing: [0, 4, 8, 16, 32, 64],
+  fonts: {
+    body: '"Crimson Text", serif',
+    label: "'Montserrat', sans-serif",
+    headings: '"Abril Fatface", cursive',
+  },
   typography: {
     fontFamily: '"Crimson Text", serif',
-    fontSize: 20,
+    fontSize: 18,
     lineHeight: 1.6,
     h1: {
       fontFamily: '"Abril Fatface", cursive',

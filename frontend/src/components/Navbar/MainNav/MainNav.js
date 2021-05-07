@@ -3,9 +3,10 @@ import Link from "next/link";
 import getStyles from "./styles";
 import Button from "@components/Elements/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 import { buttonTypes } from "@types";
 
-import Hamburger from "../Hamburger";
+// import Hamburger from "../Hamburger";
 
 const useStyles = makeStyles((theme) => getStyles(theme));
 
@@ -49,8 +50,15 @@ const MainNav = () => {
               </li>
             ))}
           </ul>
-          <Button type={buttonTypes.secondary}>Sign up</Button>
-          <Button type={buttonTypes.primary}>Log in</Button>
+
+          <div className={classes.buttonsWrapper}>
+            <div>
+              <Button type={buttonTypes.secondary}>Sign up </Button>
+            </div>
+            <div>
+              <Button type={buttonTypes.primary}>Log in</Button>
+            </div>
+          </div>
         </div>
       </nav>
 
