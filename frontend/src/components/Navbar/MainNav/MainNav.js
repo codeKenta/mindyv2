@@ -3,10 +3,9 @@ import Link from "next/link";
 import getStyles from "./styles";
 import Button from "@components/Elements/Button";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
 import { buttonTypes } from "@types";
 
-// import Hamburger from "../Hamburger";
+import Hamburger from "../Hamburger";
 
 const useStyles = makeStyles((theme) => getStyles(theme));
 
@@ -21,6 +20,13 @@ const MainNav = () => {
   const [isActive, setIsActive] = useState(false);
   const classes = useStyles({ isActive });
 
+  // const handleIsActive = useMemo(() => {
+  //   setIsActive((prev) => !prev);
+  // }, [isActive]);
+
+  function handleHamburger() {
+    setIsActive((prev) => !prev);
+  }
   const isLoggedIn = false;
 
   useEffect(() => {
@@ -59,13 +65,11 @@ const MainNav = () => {
               <Button type={buttonTypes.primary}>Log in</Button>
             </div>
           </div>
+          <div className={classes.hamburgerWrapper}>
+            <Hamburger isActive={isActive} handleClick={handleHamburger} />
+          </div>
         </div>
       </nav>
-
-      {/* <Hamburger
-        isActive={isActive}
-        handleClick={(e) => setIsActive(!isActive)}
-      /> */}
     </div>
   );
 };

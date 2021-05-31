@@ -1,6 +1,6 @@
 const breakpoint = 700;
 
-const isActive = false;
+// const isActive = false;
 
 const getStyles = (theme) => {
   const { space, palette } = theme;
@@ -14,8 +14,8 @@ const getStyles = (theme) => {
       borderBottom: "1px solid grey",
       padding: `${space.xs} ${space.s}`,
       "@media screen and (max-width: 699px)": {
-        position: isActive ? "fixed" : "absolute",
-        height: isActive ? "100vh" : "auto",
+        position: ({ isActive }) => (isActive ? "fixed" : "absolute"),
+        height: ({ isActive }) => (isActive ? "100vh" : "auto"),
       },
       "@media screen and (min-width: 700px)": {
         position: "absolute",
@@ -108,22 +108,28 @@ const getStyles = (theme) => {
     //     flexDirection: "row",
     //   },
     // },
-    hamburger: {
-      display: "flex",
-      width: "40px",
-      height: "25px;",
-      justifyContent: "space-between",
-      flexDirection: "column",
-      position: "absolute",
-      top: "20px",
-      right: "20px",
-      zIndex: 30000,
-      cursor: "pointer",
-
-      "@media screen and (min-width: 700px)": {
+    hamburgerWrapper: {
+      marginLeft: space.m,
+      "@media screen and (min-width: 900px)": {
         display: "none",
       },
     },
+
+    // hamburgerWrapper: {
+    //   display: "flex",
+    //   width: "40px",
+    //   height: "25px;",
+    //   justifyContent: "space-between",
+    //   flexDirection: "column",
+    //   position: "absolute",
+    //   top: "20px",
+    //   right: "20px",
+    //   zIndex: 30000,
+    //   cursor: "pointer",
+    //   "@media screen and (min-width: 900px)": {
+    //     display: "none",
+    //   },
+    // },
   };
 };
 
