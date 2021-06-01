@@ -38,6 +38,9 @@ const theme = createMuiTheme({
     l: "40px",
     xl: "50px",
   },
+  breakpoints: {
+    navbar: "700px",
+  },
   spacing: [0, 4, 8, 16, 32, 64],
   fonts: {
     body: '"Crimson Text", serif',

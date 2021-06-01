@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 // import LocaleContext from "@context/LocaleContext";
 // eslint-disable-next-line no-unused-vars
 
-import MainNav from "@components/Navbar/MainNav";
+import Navbar from "@components/Navbar";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <MainNav />
+      <Navbar />
       <div
         sx={{
           minHeight: "100vh",

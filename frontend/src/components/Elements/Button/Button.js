@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => {
       padding: `5px ${space.m}`,
       borderRadius: radius.s,
       textTransform: "none",
+      minWidth: "max-content",
     },
 
     [buttonTypes.primary]: {
