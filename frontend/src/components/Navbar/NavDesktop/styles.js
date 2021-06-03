@@ -19,6 +19,7 @@ const getStyles = (theme) => {
       color: palette.primary.darkGrey,
       margin: 0,
       marginRight: space.m,
+      cursor: "pointer",
     },
 
     buttonsWrapper: {

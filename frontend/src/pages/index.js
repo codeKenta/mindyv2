@@ -1,7 +1,5 @@
 import Layout from "@components/Layout/Layout";
 
-console.log(Layout);
-
 import { useSession, signIn, signOut } from "next-auth/client";
 
 export default function Component() {
@@ -20,6 +18,8 @@ export default function Component() {
           <button onClick={() => signIn()}>Sign in</button>
         </>
       )}
+
+      <p>HEllo</p>
     </Layout>
   );
 }

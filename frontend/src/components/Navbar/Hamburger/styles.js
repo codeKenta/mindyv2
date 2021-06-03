@@ -3,8 +3,6 @@
 const getStyles = (theme) => {
   const { space, palette, props } = theme;
 
-  console.log(props);
-
   const inner = {
     width: 30,
     height: 4,

@@ -1,21 +1,16 @@
 import PropTypes from "prop-types";
-// import LocaleContext from "@context/LocaleContext";
-// eslint-disable-next-line no-unused-vars
-
 import Navbar from "@components/Navbar";
+import { makeStyles } from "@material-ui/core/styles";
+import getStyles from "./styles";
+
+const useStyles = makeStyles((theme) => getStyles(theme));
 
 const Layout = ({ children }) => {
+  const classes = useStyles();
   return (
     <>
       <Navbar />
-      <div
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
+      <div className={classes.contentWrapper}>
         <main>{children}</main>
         <footer>this is footer</footer>
       </div>
