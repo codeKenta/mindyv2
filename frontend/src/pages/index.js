@@ -1,5 +1,5 @@
-import Layout from "@components/Layout/Layout";
-
+import Layout from "@components/Layout";
+import EnterWithAccount from "@components/EnterWithAccount";
 import { useSession, signIn, signOut } from "next-auth/client";
 
 export default function Component() {
@@ -7,6 +7,7 @@ export default function Component() {
 
   return (
     <Layout>
+      <EnterWithAccount />
       {session ? (
         <>
           Signed in as {session.user.email} <br />
